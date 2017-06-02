@@ -5,6 +5,8 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     @posts = Post.all.order(day: :asc)
+    @today = Date.today.to_s
+    
   end
 
   # GET /posts/1
@@ -65,7 +67,11 @@ class PostsController < ApplicationController
     @select_day = params[:select_day]
     @result = Post.where("day LIKE ?", "#{@select_day}")
   end
-
+  
+  def after_today
+    @posts = Post.all.order(day: :asc)
+    @today = Date.today.to_s
+  end
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_post

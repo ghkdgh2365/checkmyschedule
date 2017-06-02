@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   resources :posts
   root 'posts#index'
   get '/search' => 'posts#search'
+  get '/after_today' => 'posts#after_today'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -4,7 +4,7 @@ class CreatePosts < ActiveRecord::Migration
       t.text :content
       t.text :day
       t.string :checking
-
+      t.integer :user_id
       t.timestamps null: false
     end
   end

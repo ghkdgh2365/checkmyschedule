@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+gem 'authority'
+gem 'rolify'
+gem 'devise'
 
 gem 'pg', group: :production
 gem 'rails_12factor', group: :production

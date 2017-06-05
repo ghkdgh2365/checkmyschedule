@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
       
-  has_many :posts
+  has_many :posts, dependent: :destroy
   
   after_create :set_default_role, if: Proc.new { User.count > 1 }
 

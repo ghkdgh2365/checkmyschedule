@@ -1,5 +1,5 @@
-skip_before_filter :verify_authenticity_token, :if => Proc.new { |c| c.request.format == 'application/json' }
 class PostsController < ApplicationController
+  skip_before_filter :verify_authenticity_token, :if => Proc.new { |c| c.request.format == 'application/json' }
   before_action :set_post, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
   # GET /posts

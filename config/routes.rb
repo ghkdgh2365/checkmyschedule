@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root 'posts#index'
   get '/search' => 'posts#search'
   get '/after_today' => 'posts#after_today'
+  get '/calendar' => 'posts#calendar'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
